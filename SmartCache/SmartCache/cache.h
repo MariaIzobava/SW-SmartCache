@@ -3,7 +3,6 @@
 #include <functional>
 #include <algorithm>
 
-
 template <class Tid, class Tobj, class TFactory>
 class Cache {
 private:
@@ -19,18 +18,17 @@ public:
 		
 		if (it == cache_table.end() || (it->second).lock() == nullptr) {
 			if (it == cache_table.end()) {
-				printf("There is no object with %d ID, let's create one\n", id);
+				std::cout << "There is no object with " << id <<" ID, let's create one\n";
 			} 
 			else {
-				printf("Object with %d ID was deleted, we'll create it one more time\n", id);
+				std::cout << "Object with " << id << " ID was deleted, we'll create it one more time\n";
 			}
 			std::shared_ptr<Tobj> ptr = factory_(id);
 			cache_table[id] = std::weak_ptr<Tobj>(ptr);
 			return ptr;
 		}
-		printf("Object with %d ID exists, return its pointer\n", id);
+		std::cout << "Object with " << id << " ID exists, return its pointer\n";
 		return (it->second).lock();
-		return nullptr;
 	}
 
 	size_t get_number_of_deleted_users() {
