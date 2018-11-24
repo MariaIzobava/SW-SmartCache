@@ -3,5 +3,11 @@
   <Executable>C:\Users\mariaizobova\Source\Repos\SW-SmartCache\SmartCache\Debug\SmartCacheTest.exe</Executable>
   <TestDurations>
     <TestDuration Test="TestCaseName.TestName" Duration="1" />
+    <TestDuration Test="." Duration="1" />
+    <TestDuration Test="OneUserMultipletimes.FirstTest" Duration="1" />
+    <TestDuration Test="CreateUsers.OneToMany" Duration="1" />
+    <TestDuration Test="CreateUsers.ManyToMany" Duration="1" />
+    <TestDuration Test="CreateUsers.ManyToOne" Duration="1" />
+    <TestDuration Test="CreateUsers.DeletedUsers" Duration="1" />
   </TestDurations>
 </GtaTestDurations>
